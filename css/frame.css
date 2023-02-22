@@ -299,15 +299,8 @@ h1{
  	width: 100vw;
 	height:60vw;
 }
-.base{
-	margin-top:2vw;
+#base{
         margin-bottom:5vw;
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	flex-direction: column;
- 	width: 100vw;
-	height:60vw;
 }
 .valu{
 	color: black;
