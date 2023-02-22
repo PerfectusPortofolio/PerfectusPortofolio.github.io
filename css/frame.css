@@ -307,7 +307,7 @@ h1{
 	font-size: 2.5vw;
 	background:yellow;
 	border-radius:1vw;
-	text-align:justify;
+	text-align:center;
 	font-weight:bold;
 }
 @-webkit-keyframes blinker {
