@@ -1,0 +1,580 @@
+/* styles.css */
+a :: hover{
+  background-color: #121212;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+header {
+    background: url('twinkly-stars-1.gif') no-repeat center center/cover;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.dynamic-island {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border-radius: 25px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: popIn 1s forwards, disappear 8s forwards 10s;
+}
+
+@keyframes popIn {
+    0% {
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.dynamic-island img {
+    max-width: 50px;
+    transition: opacity 1s ease-in-out;
+}
+
+.name-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.name-container img {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    margin: 0 10px;
+}
+
+#name {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.name-container img,
+.name-container h2 {
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#blue-tick {
+    margin-bottom: 30px;
+}
+
+/*#blue-tick-png {
+    margin-bottom: 25px;
+    height: 150px;
+    width: auto;
+    margin-right: -450px;
+    position: absolute;
+}*/
+
+#blue-flame {
+    margin-bottom: 40px;
+    padding-top: 0px;
+}
+
+#bot-gif {
+    animation: dropDown 2s forwards;
+}
+
+@keyframes dropDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#welcome-gif {
+    animation: fadeInOut 4s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#about-me {
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    margin-top: 100px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container {
+    margin-bottom: 1rem;
+}
+
+#profile-image {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.description-container {
+    position: relative;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+#description {
+  text-align: justify;
+}
+
+#about-me button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0.5rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    bottom: -3rem; /* Adjust as needed */
+}
+
+#contact-me {
+    animation: pulse 2s infinite;
+}
+.name-container h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700; /* Bold weight for more authority */
+    font-size: 2.5rem; /* Adjust size as needed */
+    color: #fff; /* Ensure it stands out */
+    margin-top: 0rem;
+}
+
+.socials-container {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.social-gif {
+    width: 40px;
+    height: 40px;
+    transition: opacity 1s ease-in-out;
+}
+.button-container {
+    position: relative;
+    display: inline-block;
+}
+
+#gps-gif {
+    position: absolute;
+    top: 15px; /* Adjust as needed */
+    left: 30%;
+    transform: translateX(-50%);
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    z-index: 10000;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#background-video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.hide {
+  display: none;
+}
+
+#certifications {
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    margin-top: 50px;
+}
+
+.certifications-container {
+    display: inline-block;
+    position: relative;
+}
+
+.flicker-images {
+    position: relative;
+    width: 300px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cert-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    border-radius: 10px;
+    animation: flicker 0.1ms infinite;
+}
+
+.cert-image:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.cert-image:nth-child(2) {
+    animation-delay: 0.033s;
+}
+
+.cert-image:nth-child(3) {
+    animation-delay: 0.066s;
+}
+
+@keyframes flicker {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 700px;
+    background-color: ;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+    position: relative;
+    padding: 0;
+}
+
+.close {
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-image {
+    min-width: 100%;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+/* Blur effect for the background */
+body.modal-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+}
+
+.certifications-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.certifications-header h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.cert-logo {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 20px;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Media Queries for Higher Resolution Images */
+@media (min-width: 1024px) {
+    .dynamic-island img {
+        max-width: 100px;
+    }
+
+    #profile-image {
+        width: 300px;
+        height: 300px;
+    }
+
+    .description-container {
+        max-width: 800px;
+    }
+
+    #about-me button {
+        font-size: 1.2rem;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 0.1rem;
+    bottom: 0;
+    
+}
+
+@media (max-width: 768px) {
+    header {
+        background: url('media/stars-galaxy.gif') no-repeat center center/cover;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+    #profile-image {
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: -100px;
+        animation: fadeIn 2s ease-in-out;
+    }
+    
+    header::after {
+        content: '';
+        background: url('media/magic-stars.gif') no-repeat center center/cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        animation: fade 60s infinite;
+        z-index: -1; /* Ensure the background is behind the text */
+    }
+    .socials-container {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px 0;
+    }
+
+    .social-gif {
+        width: 30px;
+        height: 30px;
+    }
+
+    @keyframes fade {
+        0%, 50%, 100% {
+            opacity: 0;
+        }
+        25%, 75% {
+            opacity: 1;
+        }
+    }
+    #name {
+      font-size: 1.6rem;
+    }
+    #blue-flame {
+      width: 30px;
+      height: auto;
+    }
+    #blue-tick {
+      width: 30px;
+      height: auto;
+    }
+    .cert-logo {
+      width: 30px;
+      margin-left: -10px;
+    }
+    #about-me {
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
+      margin-top: 100px;
+    }
+    
+    #description {
+      font-size: 14.3px;
+      text-align: justify;
+    }
+    .button-container {
+      margin-top: 50px;
+    }
+}
+@media (min-width: 768px){
+    #profile-image {
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-top: -80px;
+        animation: fadeIn 2s ease-in-out;
+    }
+    .certifications-header h2 {
+        font-size: 2.5rem; /* Increase font size for larger screens */
+    }
+
+    .cert-logo {
+        width: 50px; /* Increase logo size for larger screens */
+    }
+
+    .flicker-images {
+        width: 400px; /* Adjust image container size for larger screens */
+        height: 500px; /* Adjust image container size for larger screens */
+    }
+    #description {
+      text-align: justify;
+      font-size: 20px;
+    }
+    #background-video {
+      width: 100%;
+      height: 70%;
+      object-fit: cover;
+      
+    }
+}

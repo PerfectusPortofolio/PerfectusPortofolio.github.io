@@ -1,0 +1,218 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+title {
+  border: 1px solid black;
+}
+
+#about-me {
+    text-align: center;
+    padding: 2rem;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container {
+    margin-bottom: 1rem;
+}
+
+#profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.description-container {
+    max-width: 600px;
+    text-align: left;
+}
+
+#about-me button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0.5rem;
+}
+
+#contact-me {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.video-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.video-item iframe {
+    width: 100%;
+    height: 200px;
+}
+
+.video-details {
+    margin-top: 0.5rem;
+}
+
+.dynamic-island {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    border-radius: 25px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    overflow: hidden; /* Ensure the pseudo-element does not overflow */
+}
+
+.dynamic-island::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: radial-gradient(circle at var(--glow-position, 0% 0%), white 0%, transparent 50%);
+    border-radius: inherit;
+    opacity: 0.5; /* Make the glow visible */
+    transition: opacity 0.3s;
+    z-index: -500;
+}
+
+.dynamic-island::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: inherit;
+    border-radius: inherit;
+    z-index: -400;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.toolbar button {
+    background-color: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toolbar button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.toolbar button:active {
+    background-color: #555;
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+body.dark-mode .video-item {
+    background-color: #333;
+    color: #fff;
+    border-color: #444;
+    border-radius: 10px;
+}
+
+body.dark-mode .video-details h3,
+body.dark-mode .video-details p {
+    color: #fff;
+}
+#time-display {
+    position: fixed;
+    top: -10px; /* Adjusted to raise it above the text */
+    left: 10px;
+    color: #fffbff;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    display: none; /* Initially hidden */
+    text-shadow: 
+        -1px -1px 0 #001,  
+         1px -1px 0 #000,
+        -1px  1px 0 #010,
+         1px  1px 0 #001;  
+}
+
