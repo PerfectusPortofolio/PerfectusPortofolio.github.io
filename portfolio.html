@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="nofollow">
+    <title>Video Editing Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>My Works</h1>
+    </header>
+    <main>
+  <div class="dynamic-island" id="dynamic-island">
+      <div class="toolbar hidden" id="toolbar">
+          <button id="toggle-date">Toggle Date</button>
+          <button id="toggle-color">Toggle Color</button>
+          <button id="about-me-btn">About Me</button>
+          <button id="contact-me-btn">Contact Me</button>
+      </div>
+  </div>
+
+
+        <div class="video-grid">
+            <!-- Video thumbnails will go here -->
+        </div>
+    </main>
+
+</body>
+<script src="js/script.js"></script>
+<script> // Add this to your existing JavaScript file or in a <script> tag at the end of your HTML body
+
+const dynamicIsland = document.querySelector('.dynamic-island');
+let angle = 0;
+
+function animateGlow() {
+    angle = (angle + 2) % 360;
+    const radius = 50; // Percentage of dynamic island size
+    const centerX = 50;
+    const centerY = 50;
+    const x = centerX + radius * Math.cos((angle * Math.PI) / 180);
+    const y = centerY + radius * Math.sin((angle * Math.PI) / 180);
+    dynamicIsland.style.setProperty('--glow-position', `${x}% ${y}%`);
+    requestAnimationFrame(animateGlow);
+}
+
+animateGlow();
+</script>
+</html>
